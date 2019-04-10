@@ -27,9 +27,11 @@ let koToEnglish = ["우유": "milk",
 				   "의자": "chair",
 				   "탁자": "table",
 				   "선생님": "teacher",
-	] as [String : Any]
+				   "여사": "women",
+				   "남사": "Men",
+	] as [String : String]
 
-func chooseWordFromArray() -> String {
+func chooseKoreanWordFromArray() -> String {
 	let dictionaryKoreanEnglish = koToEnglish
 	
 	let randomVal = dictionaryKoreanEnglish.randomElement()
@@ -38,26 +40,56 @@ func chooseWordFromArray() -> String {
 	
 }
 
-func checkAnswer(userInput: String, randKoWord: String) -> String {
+func chooseEnglishWordFromArray() -> String {
+	let dictionaryEnglishKorean = koToEnglish
+
+	let randomVal = dictionaryEnglishKorean.randomElement()
+	let enWord = randomVal!.value
+	return enWord
+}
+
+
+func checkAnswerKoreanToEnglish(userInput: String, randKoWord: String) -> String {
 	let dictionaryKoreanEnglish = koToEnglish
-	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord] as! String
+	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord]
 	if(stringKoreanEnglish == userInput) {
 		return "That was the good answer\n"
 	} else {
-		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] as! String)\n"
+		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] ?? "foo")\n"
 		return returnToTextWrong
 	}
 	
 }
 
+func checkAnswerEnglishToKorean(userInput: String, randEnWord: String) -> String {
+	let dictionaryEnglishKorean = koToEnglish
+	let stringEnglishKorean = dictionaryEnglishKorean[randEnWord]
+	if(stringEnglishKorean == userInput) {
+		return "That was the good answer\n"
+	} else {
+		let returnTextWrong = "The answer for \(randEnWord) is \(dictionaryEnglishKorean[randEnWord] ?? "foo")\n"
+		return returnTextWrong
+	}
+}
+
 func main() {
 	var inputWord = "foo"
+	print("For Korean to english type: Korean,\nfor English to korean type: English")
+	let choice = readLine()!
 	while(inputWord.isEmpty == false) {
-		let choosedWord = chooseWordFromArray()
-		print(choosedWord)
-		inputWord = readLine()!
-		print(checkAnswer(userInput: inputWord, randKoWord: choosedWord))
+		if(inputWord == "Korean") {
+				let choosedWord = chooseKoreanWordFromArray()
+				print(choosedWord)
+				inputWord = readLine()!
+				print(checkAnswerKoreanToEnglish(userInput: inputWord, randKoWord: choosedWord))
+		} else if(choice == "English") {
+			let choosedWord = chooseEnglishWordFromArray()
+			print(choosedWord)
+			inputWord = readLine()!
+			print(checkAnswerEnglishToKorean(userInput: inputWord, randEnWord: choosedWord))
+		}
 	}
+	print("안녕하세요, goodbye 👋\nTomas Daniel Nieto, 2019, Me™️")
 }
 
 main()
