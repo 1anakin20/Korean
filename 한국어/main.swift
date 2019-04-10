@@ -9,21 +9,21 @@
 
 import Foundation
 
-let koToEnglish = ["우유": "Milk",
+let koToEnglish = ["우유": "milk",
 				   "아이": "child",
 				   "우의": "frienship",
-				   "가유": ["Free", "Liberty"],
-				   "시간": "Time",
-				   "불": ["Fire", "Flame"],
-				   "예": "Yes",
-				   "이": "This",
-				   "이미지": "Image",
-				   "바나나": "Banana",
-				   "한국": "Korea",
-				   "한국어": "Korean",
-				   "한녕하세요": "Hello",
-				   "한녕히 게세요": "Goodbye",
-				   "도시": "City"
+				   "가유": "free",
+				   "시간": "time",
+				   "불": "fire",
+				   "예": "yes",
+				   "이": "this",
+				   "이미지": "image",
+				   "바나나": "banana",
+				   "한국": "korea",
+				   "한국어": "korean",
+				   "한녕하세요": "hello",
+				   "한녕히 게세요": "goodbye",
+				   "도시": "city",
 	] as [String : Any]
 
 func chooseWordFromArray() -> String {
@@ -37,14 +37,24 @@ func chooseWordFromArray() -> String {
 
 func checkAnswer(userInput: String, randKoWord: String) -> String {
 	let dictionaryKoreanEnglish = koToEnglish
-	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord] as! String
+	let stringKoreanEnglish: String = dictionaryKoreanEnglish[randKoWord] as! String
 	if(stringKoreanEnglish == userInput) {
-		return "Good"
+		return "That was the good answer"
 	} else {
-		return dictionaryKoreanEnglish[randKoWord] as! String
+		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] as! String)"
+		return returnToTextWrong
 	}
 	
 }
 
-print(checkAnswer(userInput: "Milk", randKoWord: chooseWordFromArray()))
+func main() {
+	var inputWord = "foo"
+	while(inputWord.isEmpty == false) {
+		let choosedWord = chooseWordFromArray()
+		print(choosedWord)
+		inputWord = readLine()!
+		print(checkAnswer(userInput: inputWord, randKoWord: choosedWord))
+	}
+}
 
+main()
