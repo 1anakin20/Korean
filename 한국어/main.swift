@@ -11,7 +11,7 @@ import Foundation
 
 let koToEnglish = ["우유": "milk",
 				   "아이": "child",
-				   "우의": "frienship",
+				   "우의": "friendship",
 				   "가유": "free",
 				   "시간": "time",
 				   "불": "fire",
@@ -24,6 +24,9 @@ let koToEnglish = ["우유": "milk",
 				   "한녕하세요": "hello",
 				   "한녕히 게세요": "goodbye",
 				   "도시": "city",
+				   "의자": "chair",
+				   "탁자": "table",
+				   "선생님": "teacher",
 	] as [String : Any]
 
 func chooseWordFromArray() -> String {
@@ -37,11 +40,11 @@ func chooseWordFromArray() -> String {
 
 func checkAnswer(userInput: String, randKoWord: String) -> String {
 	let dictionaryKoreanEnglish = koToEnglish
-	let stringKoreanEnglish: String = dictionaryKoreanEnglish[randKoWord] as! String
+	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord] as! String
 	if(stringKoreanEnglish == userInput) {
-		return "That was the good answer"
+		return "That was the good answer\n"
 	} else {
-		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] as! String)"
+		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] as! String)\n"
 		return returnToTextWrong
 	}
 	
