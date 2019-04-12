@@ -9,10 +9,12 @@
 
 import Foundation
 
+// All korean words and their english equvalent
+// -PS may need to find a more efficient way to keep the list while growing
 let koToEnglish = ["우유": "milk",
 				   "아이": "child",
 				   "우의": "friendship",
-				   "가유": "free",
+				   "자유": "free",
 				   "시간": "time",
 				   "불": "fire",
 				   "예": "yes",
@@ -27,8 +29,10 @@ let koToEnglish = ["우유": "milk",
 				   "의자": "chair",
 				   "탁자": "table",
 				   "선생님": "teacher",
+				   "어서 오세요": "welcome",
 	] as [String : String]
 
+// korean choice
 func chooseKoreanWordFromArray() -> String {
 	let dictionaryKoreanEnglish = koToEnglish
 	let randomVal = dictionaryKoreanEnglish.randomElement()
@@ -36,31 +40,38 @@ func chooseKoreanWordFromArray() -> String {
 	return koWord
 }
 
+
+// english choice
 func chooseEnglishWordFromArray() -> String {
 	let dictionaryEnglishKorean = koToEnglish
 	let randomVal = dictionaryEnglishKorean.randomElement()
-	let enWord = randomVal!.value
+	print(randomVal!.value)
+	let enWord = randomVal!.key
 	return enWord
 }
 
+// For korean choice
 func checkAnswerKoreanToEnglish(userInput: String, randKoWord: String) -> String {
 	let dictionaryKoreanEnglish = koToEnglish
-	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord] ?? "Default value"
+	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord] ?? "Default value checkAnswerKoreanEnglish"
 	if(stringKoreanEnglish == userInput) {
 		return "That was the good answer\n"
 	} else {
-		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] ?? "Default value")\n"
+		let returnToTextWrong = "The answer for \(randKoWord) is \(dictionaryKoreanEnglish[randKoWord] ?? "Default value checkAnswerKoreanEnglish else")\n"
 		return returnToTextWrong
 	}
 }
 
+// For english choice
 func checkAnswerEnglishToKorean(userInput: String, randEnWord: String) -> String {
 	let dictionaryEnglishKorean = koToEnglish
-	let stringEnglishKorean = dictionaryEnglishKorean[randEnWord]
-	if(stringEnglishKorean == userInput) {
+	let dictionaryValue = dictionaryEnglishKorean[randEnWord]
+	let ifUserInput: String = userInput
+	//let dictionaryKey = randEnWord
+	if(randEnWord == ifUserInput) {
 		return "That was the good answer\n"
 	} else {
-		let returnTextWrong = "The answer for \(randEnWord) is \(dictionaryEnglishKorean[randEnWord] ?? "foo")\n"
+		let returnTextWrong = "The answer for \(dictionaryValue ?? "Default value checkAnswerEnglishKorean()") is \(randEnWord)\n"
 		return returnTextWrong
 	}
 }
@@ -68,20 +79,19 @@ func checkAnswerEnglishToKorean(userInput: String, randEnWord: String) -> String
 func main() {
 	var inputWord = "foo"
 	print("For korean to english type: korean,\nfor english to korean type: english")
-	let choice = readLine()
+	let choice = readLine()!
 	if(choice == "korean") {
 		while(inputWord.isEmpty == false) {
 			let choosedWord = chooseKoreanWordFromArray()
 			print(choosedWord)
-			inputWord = readLine() ?? "Nil = inputWord (korean)"
+			inputWord = readLine() ?? "Default value inputWord korean choice"
 			print(checkAnswerKoreanToEnglish(userInput: inputWord, randKoWord: choosedWord))
 		}
 	} else if(choice == "english") {
 		while(inputWord.isEmpty == false) {
-			let choosedWord = chooseEnglishWordFromArray()
-			print(choosedWord)
-			inputWord = readLine() ?? "nil = inputWord (english)"
-			print(checkAnswerEnglishToKorean(userInput: inputWord, randEnWord: choosedWord))
+			let choosedEnglishWord = chooseEnglishWordFromArray()
+			inputWord = readLine() ?? "Default value inputWord english choice"
+			print(checkAnswerEnglishToKorean(userInput: inputWord, randEnWord: choosedEnglishWord))
 		}
 	}
 }
