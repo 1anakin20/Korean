@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		B371E27D225E2B040081EC6D /* 한국어 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "한국어"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B371E280225E2B040081EC6D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B3F2F5FD22620F0B004B90E3 /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				B371E280225E2B040081EC6D /* main.swift */,
+				B3F2F5FD22620F0B004B90E3 /* words.json */,
 			);
 			path = "한국어";
 			sourceTree = "<group>";

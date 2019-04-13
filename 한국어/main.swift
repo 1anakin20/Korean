@@ -11,6 +11,8 @@ import Foundation
 
 // All korean words and their english equvalent
 // -PS may need to find a more efficient way to keep the list while growing
+
+/**********************************
 let koToEnglish = ["우유": "milk",
 				   "아이": "child",
 				   "우의": "friendship",
@@ -29,8 +31,9 @@ let koToEnglish = ["우유": "milk",
 				   "의자": "chair",
 				   "탁자": "table",
 				   "선생님": "teacher",
-				   "어서 오세요": "welcome",
+				   //"어서 오세요": "welcome",
 	] as [String : String]
+*************************************************/
 
 // korean choice
 func chooseKoreanWordFromArray() -> String {
@@ -77,7 +80,7 @@ func checkAnswerEnglishToKorean(userInput: String, randEnWord: String) -> String
 }
 
 func main() {
-	var inputWord = "foo"
+	var inputWord = "Default value for inputWord"
 	print("For korean to english type: korean,\nfor english to korean type: english")
 	let choice = readLine()!
 	if(choice == "korean") {
