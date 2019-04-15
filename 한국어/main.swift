@@ -30,6 +30,7 @@ let koToEnglish = ["우유": "milk",
 				   "탁자": "table",
 				   "선생님": "teacher",
 				   "어서 오세요": "welcome",
+				   "나무": "tree",
 	] as [String : String]
 
 // korean choice
@@ -76,23 +77,32 @@ func checkAnswerEnglishToKorean(userInput: String, randEnWord: String) -> String
 	}
 }
 
+func koreanChoice() {
+	var inputWord = "inputWord declaration value koreanChoice"
+	while(inputWord.isEmpty == false) {
+		let choosedWord = chooseKoreanWordFromArray()
+		print(choosedWord)
+		inputWord = readLine() ?? "Default value inputWord korean choice"
+		print(checkAnswerKoreanToEnglish(userInput: inputWord, randKoWord: choosedWord))
+	}
+}
+
+func englishChoice() {
+	var inputWord = "inputWord default value englishChoice"
+	while(inputWord.isEmpty == false) {
+		let choosedEnglishWord = chooseEnglishWordFromArray()
+		inputWord = readLine() ?? "Default value inputWord english choice"
+		print(checkAnswerEnglishToKorean(userInput: inputWord, randEnWord: choosedEnglishWord))
+	}
+}
+
 func main() {
-	var inputWord = "foo"
 	print("For korean to english type: korean,\nfor english to korean type: english")
 	let choice = readLine()!
 	if(choice == "korean") {
-		while(inputWord.isEmpty == false) {
-			let choosedWord = chooseKoreanWordFromArray()
-			print(choosedWord)
-			inputWord = readLine() ?? "Default value inputWord korean choice"
-			print(checkAnswerKoreanToEnglish(userInput: inputWord, randKoWord: choosedWord))
-		}
+		koreanChoice()
 	} else if(choice == "english") {
-		while(inputWord.isEmpty == false) {
-			let choosedEnglishWord = chooseEnglishWordFromArray()
-			inputWord = readLine() ?? "Default value inputWord english choice"
-			print(checkAnswerEnglishToKorean(userInput: inputWord, randEnWord: choosedEnglishWord))
-		}
+		englishChoice()
 	}
 }
 
