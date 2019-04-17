@@ -82,7 +82,7 @@ func koreanChoice() {
 	while(inputWord.isEmpty == false) {
 		let choosedWord = chooseKoreanWordFromArray()
 		print(choosedWord)
-		inputWord = readLine() ?? "Default value inputWord korean choice"
+		inputWord = readLine() ?? "Default value inputWord korean choice".lowercased()
 		print(checkAnswerKoreanToEnglish(userInput: inputWord, randKoWord: choosedWord))
 	}
 }
@@ -91,14 +91,14 @@ func englishChoice() {
 	var inputWord = "inputWord default value englishChoice"
 	while(inputWord.isEmpty == false) {
 		let choosedEnglishWord = chooseEnglishWordFromArray()
-		inputWord = readLine() ?? "Default value inputWord english choice"
+		inputWord = readLine() ?? "Default value inputWord english choice".lowercased()
 		print(checkAnswerEnglishToKorean(userInput: inputWord, randEnWord: choosedEnglishWord))
 	}
 }
 
 func main() {
 	print("For korean to english type: korean,\nfor english to korean type: english")
-	let choice = readLine()!
+	let choice = readLine()!.lowercased()
 	if(choice == "korean") {
 		koreanChoice()
 	} else if(choice == "english") {
