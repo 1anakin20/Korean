@@ -24,7 +24,7 @@ let koToEnglish = ["우유": "milk",
 				   "한국": "korea",
 				   "한국어": "korean",
 				   "한녕하세요": "hello",
-				   "한녕히 게세요": "goodbye",
+				   "한녕히 계세요": "goodbye",
 				   "도시": "city",
 				   "의자": "chair",
 				   "탁자": "table",
@@ -107,4 +107,4 @@ func main() {
 }
 
 main()
-print("안녕하세요, goodbye 👋\nTomas Daniel Nieto, 2019, Me™️")
+print("안녕히 가세요, goodbye 👋\nTomas Daniel Nieto, 2019, Me™️")
