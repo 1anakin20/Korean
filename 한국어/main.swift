@@ -31,6 +31,7 @@ let koToEnglish = ["우유": "milk",
 				   "선생님": "teacher",
 				   "어서 오세요": "welcome",
 				   "나무": "tree",
+				   "뭐": "what",
 	] as [String : String]
 
 // korean choice
