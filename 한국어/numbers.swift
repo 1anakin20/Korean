@@ -44,5 +44,12 @@ func checkNumber100or1000or10() -> String {
 
 func highNumbers10(randomNum: Int) {
 	// This function will compose the Sino-Korean 11 to 99 numbers gramatically, dunno how to do it 🤷‍♀️
-	
+	let decomposedRandomNum = indivualDigits(randomNum: randomNum)
+}
+
+func indivualDigits(randomNum: Int) -> Array<Int> {
+	//This function will decompose every number into digits and put them into an Int array
+	let strRandomNum = String(randomNum)
+	let digitsRandomNum = strRandomNum.compactMap{ $0.wholeNumberValue }
+	return digitsRandomNum
 }
