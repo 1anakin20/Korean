@@ -10,7 +10,7 @@
 
 import Foundation
 
-// Func fact, 4 is a unlucky number in Korea becuase it sounds like death
+// Fun fact, 4 is a unlucky number in Korea becuase it sounds like death
 // Grammar lesson, 6 can also be 륙
 let koNumbers = [1: "일",
 				 2: "이",
@@ -29,4 +29,20 @@ let koNumbers = [1: "일",
 func randomNumber() -> Int {
 	let randomNum = Int.random(in: 1...2000)
 	return randomNum
+}
+
+func checkNumber100or1000or10() -> String {
+	let randomNum = randomNumber()
+	if(1...10 ~= randomNum || randomNum == 1000 || randomNum == 100) {
+		let stringKoNumbersValue = String(koNumbers[randomNum]!)
+		return stringKoNumbersValue
+	} else if(10..<100 ~= randomNum) {
+		highNumbers10(randomNum: randomNum)
+	}
+	return "CheckNumber100or10 final return" //Temporal return until else-if return added
+}
+
+func highNumbers10(randomNum: Int) {
+	// This function will compose the Sino-Korean 11 to 99 numbers gramatically, dunno how to do it 🤷‍♀️
+	
 }
