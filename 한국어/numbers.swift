@@ -37,14 +37,19 @@ func checkNumber100or1000or10() -> String {
 		let stringKoNumbersValue = String(koNumbers[randomNum]!)
 		return stringKoNumbersValue
 	} else if(10..<100 ~= randomNum) {
-		highNumbers10(randomNum: randomNum)
+		return highNumbers10(randomNum: randomNum)
 	}
 	return "CheckNumber100or10 final return" //Temporal return until else-if return added
 }
 
-func highNumbers10(randomNum: Int) {
+func highNumbers10(randomNum: Int) -> String {
 	// This function will compose the Sino-Korean 11 to 99 numbers gramatically, dunno how to do it 🤷‍♀️
 	let decomposedRandomNum = indivualDigits(randomNum: randomNum)
+	let firstNumber = String(koNumbers[decomposedRandomNum[1]] ?? "Default value of firstNumber, highNumbers10(randomNum: Int)")
+	let secondNumber = String(koNumbers[decomposedRandomNum[2]] ?? "Default value of secondNumber, highNumbers10(randomNum: Int)")
+	// String concontaction to add the 십 in the middle
+	let concontedString = firstNumber + "십" + secondNumber
+	return concontedString
 }
 
 func indivualDigits(randomNum: Int) -> Array<Int> {
