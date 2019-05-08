@@ -97,13 +97,25 @@ func englishChoice() {
 	}
 }
 
+func numberChoice() {
+	// Function to call all related functions to numbers
+	var inputWord = "inputWord default value numberChoice"
+	while(inputWord.isEmpty == false) {
+		let choosedNumber = checkNumber100or1000or10()
+		inputWord = readLine() ?? "Default value inputWord number choice".lowercased()
+		
+	}
+}
+
 func main() {
-	print("For korean to english type: korean,\nfor english to korean type: english")
+	print("For korean to english type: korean,\nfor english to korean type: english\nfor numbers type: numbers")
 	let choice = readLine()!.lowercased()
 	if(choice == "korean") {
 		koreanChoice()
 	} else if(choice == "english") {
 		englishChoice()
+	} else if(choice == "numbers") {
+		numberChoice()
 	}
 }
 
