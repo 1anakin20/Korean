@@ -54,6 +54,7 @@ func chooseEnglishWordFromArray() -> String {
 
 // For korean choice
 func checkAnswerKoreanToEnglish(userInput: String, randKoWord: String) -> String {
+	// Korean to english
 	let dictionaryKoreanEnglish = koToEnglish
 	let stringKoreanEnglish = dictionaryKoreanEnglish[randKoWord] ?? "Default value checkAnswerKoreanEnglish"
 	if(stringKoreanEnglish == userInput) {
@@ -66,6 +67,7 @@ func checkAnswerKoreanToEnglish(userInput: String, randKoWord: String) -> String
 
 // For english choice
 func checkAnswerEnglishToKorean(userInput: String, randEnWord: String) -> String {
+	// English to Korean
 	let dictionaryEnglishKorean = koToEnglish
 	let dictionaryValue = dictionaryEnglishKorean[randEnWord]
 	let ifUserInput: String = userInput

@@ -27,7 +27,7 @@ let koNumbers = [1: "일",
 	] as [Int : String]
 
 func randomNumber() -> Int {
-	let randomNum = Int.random(in: 1...2000)
+	let randomNum = Int.random(in: 1...100) // 100 for debuggin purposes
 	return randomNum
 }
 
