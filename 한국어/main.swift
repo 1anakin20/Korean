@@ -109,9 +109,7 @@ func numberChoice() {
 	// Function to call all related functions to numbers
 	var inputWord = "inputWord default value numberChoice"
 	while(inputWord.isEmpty == false) {
-		let choosedNumber = checkNumber100or1000or10()
 		inputWord = readLine() ?? "Default value inputWord number choice".lowercased()
-		
 	}
 }
 

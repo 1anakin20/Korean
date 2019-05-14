@@ -1,17 +1,5 @@
-//
-//  numbers.swift
-//
-// This is for sino-Korean numbers
-//  한국어
-//
-//  Created by Tomas Daniel Nieto on 2019-05-06.
-//  Copyright © 2019 Tomas Daniel Nieto. All rights reserved.
-//
-
 import Foundation
 
-// Fun fact, 4 is a unlucky number in Korea becuase it sounds like death
-// Grammar lesson, 6 can also be 륙
 let koreanDigitNames = [0:"영",
 						1:"일",
 						2:"이",
@@ -23,11 +11,6 @@ let koreanDigitNames = [0:"영",
 						8:"팔",
 						9:"구",
 	] as [Int : String]
-
-func randomNumber() -> Int {
-	let randomNum = Int.random(in: 1...100) // 100 for debuggin purposes
-	return randomNum
-}
 
 let koreanPoweString = [0:"", 1:"십", 2:"백",3:"천", 4:"만", 5:"십",6:"백", 7:"천", 8:"억", 9:"십",10:"백",11:"천",12:"조",13:"십",14:"백",15:"천"]
 func koreanString(number: Int, base:Int, maxPower: Int, originalNumber:Int) -> String {
@@ -58,13 +41,4 @@ func numberDecimaltoStringKorean(decimalNumber:Int) -> String{
 	return output
 }
 
-func checkAnswerKoreanToEnglishNumbers10(choice: Int) -> String {
-	// Check if Korean match English number
-}
-
-
-func checkAnswerEnglishToKoreanNumbers() {
-	// Check if English matchs Korean number
-}
-
-
+print(numberDecimaltoStringKorean(decimalNumber: 10))
