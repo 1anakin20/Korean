@@ -99,6 +99,12 @@ func englishChoice() {
 	}
 }
 
+func koreanOrEnglishNumbers() -> String {
+	print("For Korean to english numbers type: korean,\nfor english to Korean type: english")
+	let choice = readLine()!.lowercased()
+	return choice
+}
+
 func numberChoice() {
 	// Function to call all related functions to numbers
 	var inputWord = "inputWord default value numberChoice"
@@ -117,7 +123,7 @@ func main() {
 	} else if(choice == "english") {
 		englishChoice()
 	} else if(choice == "numbers") {
-		numberChoice()
+		koreanOrEnglishNumbers()
 	}
 }
 

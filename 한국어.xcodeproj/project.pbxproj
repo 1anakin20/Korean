@@ -25,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		B307432F2285E93B00740B0C /* numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = numbers.swift; sourceTree = "<group>"; };
+		B31BB6D3228B2AF70052B5D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B371E27D225E2B040081EC6D /* 한국어 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "한국어"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B371E280225E2B040081EC6D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B371E280225E2B040081EC6D /* main.swift */,
+				B31BB6D3228B2AF70052B5D5 /* ViewController.swift */,
 				B307432F2285E93B00740B0C /* numbers.swift */,
 			);
 			path = "한국어";

@@ -59,10 +59,19 @@ func indivualDigits(randomNum: Int) -> Array<Int> {
 	return digitsRandomNum
 }
 
-func checkAnswerKoreanToEnglishNumbers() {
+func checkAnswerKoreanToEnglishNumbers10(choice: Int) -> String {
 	// Check if Korean match English number
+	let englishChoice10 = Int(checkNumber100or1000or10())
+	if(choice == englishChoice10) {
+		return "That was the good answer"
+	} else {
+		let returnTextWrong = "The answer for\(englishChoice10) is "
+		return returnTextWrong
+	}
 }
 
 func checkAnswerEnglishToKoreanNumbers() {
 	// Check if English matchs Korean number
 }
+
+
