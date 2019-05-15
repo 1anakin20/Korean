@@ -58,7 +58,7 @@ func numberDecimaltoStringKorean(decimalNumber:Int) -> String{
 	return output
 }
 
-func checkAnswerKoreanToEnglish(choice: String) -> String {
+func checkAnswerKoreanToEnglishNumbers(choice: String) -> String {
 	// Check if Korean matchs English number
 	let randNumber = randomNumber()
 	let koNumber = numberDecimaltoStringKorean(decimalNumber: randNumber)

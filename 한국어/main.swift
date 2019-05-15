@@ -99,18 +99,28 @@ func englishChoice() {
 	}
 }
 
-func koreanOrEnglishNumbers() -> String {
-	print("For Korean to english numbers type: korean,\nfor english to Korean type: english")
+func koreanOrEnglishNumbers() {
+	// Function to call all related functions to numbers
+	print("For korean to english numbers type: korean,\nfor english to Korean type: english")
 	let choice = readLine()!.lowercased()
-	return choice
+	if(choice == "english") {
+		numberChoiceKoreanToEnglish()
+	} else if(choice == "korean") {
+		numberChoiceEngishToKorean()
+	}
 }
 
-func numberChoice() {
-	// Function to call all related functions to numbers
+func numberChoiceKoreanToEnglish() {
+	// Call Korean to english functions
 	var inputWord = "inputWord default value numberChoice"
 	while(inputWord.isEmpty == false) {
 		inputWord = readLine() ?? "Default value inputWord number choice".lowercased()
+		print(checkAnswerKoreanToEnglishNumbers(choice: inputWord))
 	}
+}
+
+func numberChoiceEngishToKorean() {
+	// Call english to korean functions
 }
 
 func main() {
