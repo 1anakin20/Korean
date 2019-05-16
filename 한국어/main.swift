@@ -114,8 +114,11 @@ func numberChoiceKoreanToEnglish() {
 	// Call Korean to english functions
 	var inputWord = "inputWord default value numberChoice"
 	while(inputWord.isEmpty == false) {
+		let randNumber = randomNumber()
+		let koNumber = numberDecimaltoStringKorean(decimalNumber: randNumber)
+		print(randNumber)
 		inputWord = readLine() ?? "Default value inputWord number choice".lowercased()
-		print(checkAnswerKoreanToEnglishNumbers(choice: inputWord))
+		print(checkAnswerKoreanToEnglishNumbers(choice: inputWord, randKoNumber: koNumber, randIntNumber: randNumber))
 	}
 }
 

@@ -30,6 +30,7 @@ func randomNumber() -> Int {
 }
 
 let koreanPoweString = [0:"", 1:"십", 2:"백",3:"천", 4:"만", 5:"십",6:"백", 7:"천", 8:"억", 9:"십",10:"백",11:"천",12:"조",13:"십",14:"백",15:"천"]
+
 func koreanString(number: Int, base:Int, maxPower: Int, originalNumber:Int) -> String {
 	if(number%10 != 0) {
 		let digitToString = koreanDigitNames[number%10]!
@@ -58,23 +59,24 @@ func numberDecimaltoStringKorean(decimalNumber:Int) -> String{
 	return output
 }
 
-func checkAnswerKoreanToEnglishNumbers(choice: String) -> String {
+func checkAnswerKoreanToEnglishNumbers(choice: String, randKoNumber: String, randIntNumber: Int) -> String {
 	// Check if Korean matchs English number
-	let randNumber = randomNumber()
-	let koNumber = numberDecimaltoStringKorean(decimalNumber: randNumber)
-	if(choice == koNumber) {
+	//let randNumber = randomNumber()
+	//let koNumber = numberDecimaltoStringKorean(decimalNumber: randIntNumber)
+	if(choice == randKoNumber) {
 		return "That was the good answer\n"
 	} else {
-		let returnWrongAnswer = "The good answer for \(randNumber) was \(koNumber)\n"
+		let returnWrongAnswer = "The good answer for \(randIntNumber) was \(randKoNumber)\n"
 		return returnWrongAnswer
 	}
 }
 
 
-func checkAnswerEnglishToKoreanNumbers(choice: Int) -> String {
+func checkAnswerEnglishToKoreanNumbers(choice: Int, randKoNumber: Int) -> String {
 	// Check if English matchs Korean number
 	let randNumber = randomNumber()
 	let koNumber = numberDecimaltoStringKorean(decimalNumber: randNumber)
+	print(randNumber)
 	if(choice == randNumber) {
 		return "That was the good answer\n"
 	} else {
