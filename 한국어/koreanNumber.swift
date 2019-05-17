@@ -12,7 +12,24 @@ let koreanDigitNames = [0:"영",
 						9:"구",
 	] as [Int : String]
 
-let koreanPoweString = [0:"", 1:"십", 2:"백",3:"천", 4:"만", 5:"십",6:"백", 7:"천", 8:"억", 9:"십",10:"백",11:"천",12:"조",13:"십",14:"백",15:"천"]
+let koreanPoweString = [0:"",
+						1:"십",
+						2:"백",
+						3:"천",
+						4:"만",
+						5:"십",
+						6:"백",
+						7:"천",
+						8:"억",
+						9:"십",
+						10:"백",
+						11:"천",
+						12:"조",
+						13:"십",
+						14:"백",
+						15:"천",
+	] as [Int :String]
+
 func koreanString(number: Int, base:Int, maxPower: Int, originalNumber:Int) -> String {
 	if(number%10 != 0) {
 		let digitToString = koreanDigitNames[number%10]!
@@ -41,4 +58,4 @@ func numberDecimaltoStringKorean(decimalNumber:Int) -> String{
 	return output
 }
 
-print(numberDecimaltoStringKorean(decimalNumber: 10))
+print(numberDecimaltoStringKorean(decimalNumber: 1))

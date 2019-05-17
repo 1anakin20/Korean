@@ -112,18 +112,26 @@ func koreanOrEnglishNumbers() {
 
 func numberChoiceKoreanToEnglish() {
 	// Call Korean to english functions
-	var inputWord = "inputWord default value numberChoice"
+	var inputWord = "inputWord default value numberChoiceKoreanToEnglish()"
 	while(inputWord.isEmpty == false) {
 		let randNumber = randomNumber()
 		let koNumber = numberDecimaltoStringKorean(decimalNumber: randNumber)
 		print(randNumber)
-		inputWord = readLine() ?? "Default value inputWord number choice".lowercased()
+		inputWord = readLine() ?? "Default value inputWord numberChoiceKoreanToEnglish()".lowercased()
 		print(checkAnswerKoreanToEnglishNumbers(choice: inputWord, randKoNumber: koNumber, randIntNumber: randNumber))
 	}
 }
 
 func numberChoiceEngishToKorean() {
 	// Call english to korean functions
+	var inputWord = "inputWord default value choice numberChoiceEngishToKorean()"
+	while(inputWord.isEmpty == false) {
+		let randNumber = randomNumber()
+		let koNumber = numberDecimaltoStringKorean(decimalNumber: randNumber)
+		print(koNumber)
+		inputWord = readLine() ?? "Default value inputWord numberChoiceEngishToKorean()"
+		print(checkAnswerEnglishToKoreanNumbers(choice: inputWord, randKoNumber: koNumber, randNumber: randNumber))
+	}
 }
 
 func main() {
