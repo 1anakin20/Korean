@@ -36,3 +36,6 @@ Thanks to myself.
 Tomas Daniel Nieto,
 
 Someone with to much free time.
+
+# Archive
+This project was made as an excersise for swift.
